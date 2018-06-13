@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>OnlinePeticije</title>
+
+</head>
+
+<body>
+<h3 align="center">Dobrodošli na sajt za online potpisivanje peticija!</h3>
+<br>
+<p align="center">Ideja online potpisivanja peticija nastala je kako bi se omogućilo ljudima da se  <br>
+    njihovim potpisivanjem bore za ono što oni smatraju ispravim bez obzira gde se oni nalaze.
+
+</p>
+<hr>
+
+
+{% if list %}
+    <ul>
+    {% for peticiju in list %}
+        <li>{{ Peticije.naziv }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Zao nam je , nema peticija za potpisivanje!</p>
+{% endif %}
+
+
+</body>
+</html>
