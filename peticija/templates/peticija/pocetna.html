@@ -4,8 +4,8 @@
 
 </head>
 
-<body>
-<h3 align="center">Dobrodošli na sajt za online potpisivanje peticija!</h3>
+<body alink="black" vlink="black">
+<h1 align="center">Dobrodošli na sajt za online potpisivanje peticija!</h1>
 <br>
 <p align="center">Ideja online potpisivanja peticija nastala je kako bi se omogućilo ljudima da se  <br>
     njihovim potpisivanjem bore za ono što oni smatraju ispravim bez obzira gde se oni nalaze.
@@ -13,17 +13,17 @@
 </p>
 <hr>
 
-
-{% if list %}
+<h3>Dostupne peticije za potpisivanje:</h3>
+{% if lista %}
     <ul>
-    {% for peticiju in list %}
-        <li>{{ Peticije.naziv }}</li>
+    {% for peticiju in lista %}
+        <li><a href="{% url 'peticija:detalji' peticiju.id %}">{{ peticiju.naziv }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>Zao nam je , nema peticija za potpisivanje!</p>
 {% endif %}
-
+<hr>
 
 </body>
 </html>
