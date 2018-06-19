@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Peticija detaljno</title>
 </head>
-<body background="#214236238">
+<body>
 <h2 align="center">{{peticij.naziv}}</h2>
 <br>
 <hr>
@@ -14,6 +14,16 @@
 <br>
 <br>
 <p align="right">Broj skupljenih potpisa:{{peticij.broj_potpisa}}</p>
+<br>
+<br>
 
+<form class="site-form" action="{% url 'peticija:detalji' peticij.id %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Potpisi">
+
+
+
+</form>
 </body>
 </html>
