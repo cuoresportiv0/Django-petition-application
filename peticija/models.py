@@ -19,6 +19,9 @@ class Potpisanti(models.Model):
     prebivaliste = models.CharField(max_length=50)
     jmbg = models.CharField(max_length=40)
 
+    def __str__(self):
+        return self.jmbg
+
 
 class Potpisane(models.Model):
     id_peticije = models.ForeignKey(Peticije, unique=False, on_delete=models.CASCADE)

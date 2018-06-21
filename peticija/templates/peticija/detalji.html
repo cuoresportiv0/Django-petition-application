@@ -5,25 +5,35 @@
     <title>Peticija detaljno</title>
 </head>
 <body>
-<h2 align="center">{{peticij.naziv}}</h2>
-<br>
-<hr>
-
-<p align="center"> {{peticij.text_peticije}}</p>
-
-<br>
-<br>
-<p align="right">Broj skupljenih potpisa:{{peticij.broj_potpisa}}</p>
+<h2 align="center" style="background-color:#0e0753;" ><font color="white">{{peticij.naziv}}</font></h2>
 <br>
 <br>
 
+<p align="center" style="font-family:verdana;"><font color=#0e0753> {{peticij.text_peticije}}</font></p>
+
+<br>
+<br>
+<p align="left" style="font-family:verdana;"><font color=#0e0753>Broj sakupljenih potpisa:{{peticij.broj_potpisa}}</font></p>
+<hr color=#0e0753>
+<hr color=#0e0753>
+<hr color=#0e0753>
+<br>
+<br>
+<br>
+
+
+<br>
 <form class="site-form" action="{% url 'peticija:detalji' peticij.id %}" method="post">
     {% csrf_token %}
     {{form}}
-    <input type="submit" value="Potpisi">
 
-
-
+   <br>
+    <br>
+    <br>
+     <input type="submit" value="Potpisi" >
+<hr color=#0e0753>
+<hr color=#0e0753>
+    <hr color=#0e0753>
 </form>
 </body>
 </html>

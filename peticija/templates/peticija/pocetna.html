@@ -1,29 +1,34 @@
 <html>
 <head>
     <title>OnlinePeticije</title>
-
 </head>
 
-<body alink="black" vlink="black">
-<h1 align="center">Dobrodošli na sajt za online potpisivanje peticija!</h1>
+<body alink=#0e0753 vlink=#0e0753>
+<h1 align="center" style="background-color:#0e0753;" ><font color="white">Dobrodošli na sajt za online potpisivanje peticija!</font></h1>
+
 <br>
-<p align="center">Ideja online potpisivanja peticija nastala je kako bi se omogućilo ljudima da se  <br>
+<p align="center" style="font-family:verdana;"><font color=#0e0753> Ideja online potpisivanja peticija nastala je kako bi se omogućilo ljudima da se  <br>
     njihovim potpisivanjem bore za ono što oni smatraju ispravim bez obzira gde se oni nalaze.
-
+</font>
 </p>
-<hr>
+  <br>
+  <br>
 
-<h3>Dostupne peticije za potpisivanje:</h3>
+
+<h3 style="background-color:#0e0753;" ><font color="white"> Dostupne peticije za potpisivanje:</font></h3>
 {% if lista %}
     <ul>
     {% for peticiju in lista %}
-        <li><a href="{% url 'peticija:detalji' peticiju.id %}">{{ peticiju.naziv }}</a></li>
+        <li><a style="text-decoration: none ; font-family:verdana; " href="{% url 'peticija:detalji' peticiju.id %}">{{ peticiju.naziv }}</a><br><p style="font-family:verdana; color:#0e0753">Broj sakupljenih potpisa:{{peticiju.broj_potpisa}}</p></li>
+        <br>
+        <br>
     {% endfor %}
     </ul>
 {% else %}
     <p>Zao nam je , nema peticija za potpisivanje!</p>
 {% endif %}
-<hr>
+<hr color=#0e0753>
+
 
 </body>
 </html>
