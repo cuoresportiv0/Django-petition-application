@@ -18,6 +18,7 @@ def pocetna(request):
 
 def detalji(request, peticije_id):
     peticij = get_object_or_404(Peticije, pk=peticije_id)
+
     if request.method=="POST":
         form=PotpisantiForm(request.POST)
         if form.is_valid():
@@ -39,3 +40,7 @@ def detalji(request, peticije_id):
 
         form=PotpisantiForm()
     return render(request, 'peticija/detalji.html', {'peticij': peticij , 'form':form})
+
+def spisak(request):
+    svi=Potpisanti.objects.all()
+    return render(request,"peticija/potpisali.html",{'svi': svi})

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Potpisane osobe</title>
+</head>
+<body alink=#0e0753 vlink=#0e0753>
+<h2 align="center" style="background-color:#0e0753;" ><font color="white">Osobe koje su potpisale peticije preko naseg sajta</font></h2>
+
+
+{% if svi %}
+<table style="width:100%" >
+<tr>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>Prebivaliste</th>
+    <th>JMBG</th>
+</tr>
+      <br>
+    {% for i in svi %}
+        <tr>
+        <td align="center">{{i.ime}}</td>
+        <td align="center">{{i.prezime}}</td>
+        <td align="center">{{i.prebivaliste}}</td>
+        <td align="center">{{i.jmbg}}</td>
+        </tr>
+
+    {% endfor %}
+
+{% else %}
+    <p style="font-family:verdana;"><font color=#0e0753>Zao nam je nema osoba koje su potpisale peticije</font></p>
+{%endif%}
+
+
+
+</table>
+</body>
+</html>
