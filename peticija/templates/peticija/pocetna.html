@@ -4,6 +4,7 @@
 </head>
 
 <body alink=#0e0753 vlink=#0e0753>
+
 <h1 align="center" style="background-color:#0e0753;" ><font color="white">Dobrodošli na sajt za online potpisivanje peticija!</font></h1>
 
 <br>
@@ -21,8 +22,11 @@
 {% if lista %}
     <ul>
     {% for peticiju in lista %}
-        <li><a style="text-decoration: none ; font-family:verdana; " href="{% url 'peticija:detalji' peticiju.id %}">{{ peticiju.naziv }}</a><br><p style="font-family:verdana; color:#0e0753">Broj sakupljenih potpisa:{{peticiju.broj_potpisa}}</p></li>
-        <br>
+        <li><a style="text-decoration: none ; font-family:verdana; " href="{% url 'peticija:detalji' peticiju.id %}">{{ peticiju.naziv }}</a><br><br><p style="font-family:verdana; color:#0e0753">Broj sakupljenih potpisa:{{peticiju.broj_potpisa}}</p>
+        <p style="font-family:verdana; color:#0e0753">Datum pocetka prikupljanja potpisa:{{peticiju.datum_pocetka}}</p>
+        <p style="font-family:verdana; color:#0e0753">Datum zavrsetka prikupljanja potpisa:{{peticiju.datum_zavrsetka}}</p>
+        </li>
+        <hr color=#0e0753>
         <br>
     {% endfor %}
     </ul>
